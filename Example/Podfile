@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'OHGoogleServiceInfo_Example' do
+  pod 'OHGoogleServiceInfo', :path => '../'
+
+  target 'OHGoogleServiceInfo_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
