@@ -19,16 +19,16 @@ platform :ios do
   desc "Description of what the lane does"
 
  lane :bump_version do
-    version = version_bump_podspec(path: "OHGoogle.podspec", bump_type: "patch")
-    git_commit(path: "AKServiceWithKakaoLocal.podspec", message: "Version Bump")
+    version = version_bump_podspec(path: "OHGoogleServiceInfo.podspec", bump_type: "patch")
+    git_commit(path: "OHGoogleServiceInfo.podspec", message: "Version Bump")
     push_to_git_remote(tags: false)
   end
 
   lane :release do
     # add actions here: https://docs.fastlane.tools/actions
-    version = version_get_podspec(path: "AKServiceWithKakaoLocal.podspec")
+    version = version_get_podspec(path: "OHGoogleServiceInfo.podspec")
     github_release = set_github_release(
-                    repository_name: "ocworld/AKServiceWithKakaoLocal",
+                    repository_name: "ocworld/OHGoogleServiceInfo",
                     api_token: ENV["GITHUB_TOKEN"],
                     name: version,
                     tag_name: version,
